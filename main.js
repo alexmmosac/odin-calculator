@@ -156,9 +156,52 @@ function mul(){
     }
 }
 
+function convert_to_percent(){
+var percent = 0.0;
+if(arguments !== undefined){
+    if(arguments.length >= 2){              // Adds multiply args together.
+        var args = Array.prototype.slice.call(arguments);
+        var array = new Array();
+        args.forEach(element=>{
+        array.push((element / 100));
+        });
+        return array;
+    }
+    else if(arguments.length == 0){             // Checks if no args passed.
+        return Error;
+    }
+    else if(typeof arguments[0] == "object"){        // Checks if array type
+        var new_array = Array();
+        var args = Array.prototype.slice.call(arguments[0])     // puts args into new array
+        if(args.length == 0){               //checks for empty array.
+            return Error;
+        }
+        else{
+        args.forEach(element => {               // adds all args from new array into sum.
+            new_array.push(element / 100);
+        });
+        return new_array;
+    }
+    }
+    else if(typeof arguments[0] == "string"){       // check if string
+        return Error;
+    }
+    else{
+        return arguments[0] / 100;         //return if only passed 1 arg
+    }
+}
+else{
+    return Error;
+}
+
+}
+
+
+
 module.exports = {
     add,
     sub,
     div,
-    mul
+    mul,
+    convert_to_percent
 }

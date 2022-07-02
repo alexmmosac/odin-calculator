@@ -1,7 +1,5 @@
 
 const main = require('./main');
-
-
 // ADD - Basic Functionality
 describe('Basic Calculator test', () => {
     test('adds two numbers', () => {
@@ -162,5 +160,43 @@ describe('Error Handling test', () => {
 describe('Error Handling test', () => {
     test('Handles Empty input', () => {
       expect(main.mul()).toEqual(Error);  // if passed nothing it will return an Error!
+    });
+});
+
+
+
+// CONVERT_TO_PERCENT - basics
+describe('Features Test', () => {
+    test('Converts one number to percent', () => {
+      expect(main.convert_to_percent(17)).toEqual(0.17);
+    });
+});
+describe('Features Test', () => {
+    test('Converts multiple number to percent', () => {
+      expect(main.convert_to_percent(17, 100, 10, 3)).toEqual([0.17, 1, 0.1, 0.03]);
+    });
+});
+
+describe('Features Test', () => {
+    test('Converts array to an array of percents', () => {
+        var array = [17, 100, 10, 3, 5, 6]
+        var array_return = [0.17, 1, 0.1, 0.03, 0.05, 0.06]
+      expect(main.convert_to_percent(array)).toEqual(array_return);
+    });
+});
+describe('Features Test', () => {
+    test('Handles empty array', () => {
+        var array = []
+      expect(main.convert_to_percent(array)).toEqual(Error);
+    });
+});
+describe('Features Test', () => {
+    test('Handles Strings being passed', () => {
+      expect(main.convert_to_percent("DONE!")).toEqual(Error);
+    });
+});
+describe('Features Test', () => {
+    test('Handles nothing being passed', () => {
+      expect(main.convert_to_percent()).toEqual(Error);
     });
 });
