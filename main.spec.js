@@ -43,37 +43,37 @@ describe('Error Handling test', () => {
 
 // SUBs -  Basic Functionality
 describe('Basic Calculator test', () => {
-    test.skip('subs two numbers', () => {
+    test('subs two numbers', () => {
       expect(main.sub(4,2)).toEqual(2);   // if passed 4 and 2 this funciton will return 2
     });
 });
 describe('Basic Calculator test', () => {
-    test.skip('subs Multiple numbers', () => {
+    test('subs Multiple numbers', () => {
       expect(main.sub(100, 50, 40)).toEqual(10); // if passed 100, 50, and 40 this function will return 10
     });
 });
 describe('Basic Calculator test', () => {
-    test.skip('subs an array of  numbers', () => {
+    test('subs an array of  numbers', () => {
         var array = [100, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
       expect(main.sub(array)).toEqual(45);  //if passed array containg 100 and all numbers of 1-10 this function will return 45
     });
 });
 // SUBs - ERROR Handling
 describe('Error Handling test', () => {
-    test.skip('Handles strings if passed', () => {
+    test('Handles strings if passed', () => {
       expect(main.sub("Goodbye Error!")).toEqual(Error);  // IF passed "Hello Error" function will return a Error
     });
 });
 
 describe('Error Handling test', () => {
-    test.skip('Handles Empty arrays if passed', () => {
+    test('Handles Empty arrays if passed', () => {
         var array = [];
       expect(main.sub(array)).toEqual(Error);     // If passed array containing nothing this function will return an Error
     });
 });
 
 describe('Error Handling test', () => {
-    test.skip('Handles Empty input', () => {
+    test('Handles Empty input', () => {
       expect(main.sub()).toEqual(Error);        // If nothing is passed this function will return an Error!
     });
 });
@@ -110,7 +110,7 @@ describe('Error Handling test', () => {
     });
 });
 
-describe('Error Handling  test', () => {
+describe('Error Handling test', () => {
     test.skip('Handles Empty input', () => {
       expect(main.div()).toEqual(Error);        //if passed nothing it will return an error
     });
