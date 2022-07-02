@@ -76,7 +76,48 @@ function sub(){
     }
 }
 function div(){
-return null;
+var quotient;
+if(arguments !== undefined){
+    if(arguments.length >= 2){
+        if(arguments[0] == 0){
+            return Error;
+        }
+        else{
+        var temp = arguments[0];
+        for(x = 1; x < arguments.length; x++){
+            temp /= arguments[x];
+        }
+        quotient = temp;
+        return quotient;
+    }
+    }
+    else if(arguments.length == 0){
+        return Error;
+    }
+    else if(typeof arguments[0] == "object"){           // Checks if array type
+        var args = Array.prototype.slice.call(arguments[0])     // puts args into new array
+        if(args.length == 0){               //checks for empty array.
+            return Error;
+        }
+        else{
+            var temp = args[0];
+            args.slice(1).forEach(element => {
+                temp /= element;
+            });
+        quotient = temp;
+        return quotient;
+        }
+    }
+    else if(typeof arguments[0] == "string"){       // check if string
+        return Error;
+    }
+    else{
+        return arguments[0];
+    }
+}
+else{
+    return Error;
+}
 }
 
 function mul(){

@@ -77,41 +77,43 @@ describe('Error Handling test', () => {
       expect(main.sub()).toEqual(Error);        // If nothing is passed this function will return an Error!
     });
 });
+
+
 // DIVs - Basic Functionality
 describe('Basic Calculator test', () => {
-    test.skip('div two numbers', () => {
+    test('div two numbers', () => {
       expect(main.div(50, 2)).toEqual(25);    // if 50 and 2 are passed this function will return 25!
     });
 });
 
 describe('Basic Calculator test', () => {
-    test.skip('divs Multiple numbers', () => {
+    test('divs Multiple numbers', () => {
       expect(main.div(100, 25, 2)).toEqual(2); // if passed 100, 25 and 2 this function will return 2
     });
 });
 describe('Basic Calculator test', () => {
-    test.skip('divs an array of  numbers', () => {
+    test('divs an array of  numbers', () => {
     var array = [100, 5, 4, 3, 2, 1];
-      expect(main.div(array)).toEqual(0.83);    // if passed array containing 100, 5, 4, 3, 2, and 1 it will return 0.833333
+      expect(main.div(array)).toEqual( 0.8333333333333334);    // if passed array containing 100, 5, 4, 3, 2, and 1 it will return 0.833333
     });
 });
 
 //DIVs -  Basic ERROR Handling
 describe('Error Handling test', () => {
-    test.skip('Handles strings if passed', () => {
+    test('Handles strings if passed', () => {
       expect(main.div("Welcome Error!")).toEqual(Error); // if passed a string it will return an error 
     });
 });
 
 describe('Error Handling test', () => {
-    test.skip('Handles Empty arrays if passed', () => {
+    test('Handles Empty arrays if passed', () => {
         var array = [];
       expect(main.div(array)).toEqual(Error);   // if passed an array it will return an error
     });
 });
 
 describe('Error Handling test', () => {
-    test.skip('Handles Empty input', () => {
+    test('Handles Empty input', () => {
       expect(main.div()).toEqual(Error);        //if passed nothing it will return an error
     });
 });
@@ -119,7 +121,7 @@ describe('Error Handling test', () => {
 //DIVs - Divde by zero ERROR 
 
 describe('Error Handling test', () => {
-    test.skip('Divide by zero', () => {
+    test('Divide by zero', () => {
       expect(main.div(0, 0)).toEqual(Error);        /*** SPECIAL CASE: if passed zero and zero it will return Error as you can't divide by zero.*/
     });
 });
