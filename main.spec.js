@@ -129,17 +129,17 @@ describe('Error Handling test', () => {
 
 // MULs - Basic Functionality 
 describe('Basic Calculator test', () => {
-    test.skip('muls two numbers', () => {
+    test('muls two numbers', () => {
       expect(main.mul(2,3)).toEqual(6);     //if passed 2 and 3 it will return 6
     });
 });
 describe('Basic Calculator test', () => {
-    test.skip('muls Multiple numbers', () => {
+    test('muls Multiple numbers', () => {
       expect(main.mul(2,3,2)).toEqual(12);  // if passed 2, 3, and 2 it will return 12 
     });
 });
 describe('Basic Calculator test', () => {
-    test.skip('muls an array of  numbers', () => {
+    test('muls an array of  numbers', () => {
         var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
       expect(main.mul(array)).toEqual(3628800);  // if passed array with 1 through 10 it will return 3,628,800
     });
@@ -147,20 +147,20 @@ describe('Basic Calculator test', () => {
 
 //MULs -  Basic ERROR Handling
 describe('Error Handling test', () => {
-    test.skip('Handles strings if passed', () => {
+    test('Handles strings if passed', () => {
       expect(main.mul("Your Almost done!")).toEqual(Error); // if passed a string it will return an error!
     });
 });
 
 describe('Error Handling test', () => {
-    test.skip('Handles Empty arrays if passed', () => {
+    test('Handles Empty arrays if passed', () => {
         var array = [];
       expect(main.mul(array)).toEqual(Error);  // if passed an empty array it will return an error
     });
 });
 
 describe('Error Handling test', () => {
-    test.skip('Handles Empty input', () => {
+    test('Handles Empty input', () => {
       expect(main.mul()).toEqual(Error);  // if passed nothing it will return an Error!
     });
 });
