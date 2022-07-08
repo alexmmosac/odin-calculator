@@ -1,5 +1,5 @@
 
-const main = require('./main');
+const main = require('./calc');
 // ADD - Basic Functionality
 describe('Basic Calculator test', () => {
     test('Take in one number and return it.', () => {

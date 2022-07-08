@@ -24,123 +24,49 @@ b - Dark
 
 /* MOBILE DESING*/
 @media only screen and (max-width: 999px){
-*{
-    margin: 0;
-    padding: 0;
-}
-html{
-    height: 100%;
-}
-
-.Calculator-body{
-    background-color: #668471;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-}
-.display{
-    display: flex;
-    background-color: #c9c5b6 ;
-    border-bottom: 1px solid #b88362;
-    width: 100vw;
-    height: 15vh;
-    font-size: 42px;
-    justify-content: flex-end;
-    align-items: center;
-    color: #a94a36;
-}
-.calculator-keys{
-    display: grid;
-    grid-template-rows: repeat(3, 1fr);
-    grid-gap: 20px;
-    padding: 20px 10px;
-
-}
-button {
-    width: 4rem;
-    height: 4rem;
-    font-size: 38px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #FCF8E8 ;
-    background-color: #ECB390;
-    border: none;
-    border-radius: 5%;
-    box-shadow: 0 9px #a94a36;
-    -webkit-border-radius: 5%;
-    -moz-border-radius: 5%;
-    -ms-border-radius: 5%;
-    -o-border-radius: 5%;
-}
-#eqauls{
-    width: 8rem;
-}
-button:active {
-    background-color: #DF7861;
-    box-shadow: 0 5px #a94a36;
-    transform: translateY(4px);
-    -webkit-transform: translateY(4px);
-    -moz-transform: translateY(4px);
-    -ms-transform: translateY(4px);
-    -o-transform: translateY(4px);
-}
-
-}
-/* Desktop DESGIN */
-@media only screen and (min-width: 1000px){
     *{
         margin: 0;
         padding: 0;
     }
     html{
-      background-color:#FCF8E8;
+        height: 100%;
     }
-    .Flexbox-container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: 5%;
-    }
-
+    
     .Calculator-body{
         background-color: #668471;
         display: flex;
         flex-direction: column;
         align-items: center;
-        height: auto;
-        width: 15vw;
-        border-radius: 5%;
-        -webkit-border-radius: 5%;
-        -moz-border-radius: 5%;
-        -ms-border-radius: 5%;
-        -o-border-radius: 5%;
-}
+        height: 100vh;
+        width: 100vw;
+    }
     .display{
         display: flex;
         background-color: #c9c5b6 ;
         border-bottom: 1px solid #b88362;
-        border-top-left-radius: 5%;
-        border-top-right-radius: 5%;
-        width: 15vw;
-        height: 10vh;
+        width: 100vw;
+        height: 15vh;
         font-size: 42px;
         justify-content: flex-end;
         align-items: center;
         color: #a94a36;
-        -webkit-border-radius:;
-        -moz-border-radius:;
-        -ms-border-radius:;
-        -o-border-radius:;
-}
+        padding-right: 4px;
+    }
+    #last_display{
+    display: flex;
+    background-color: #c9c5b6 ;
+    width: 100vw;
+    height: 1vh;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    color: #a94a36;
+    }
     .calculator-keys{
         display: grid;
         grid-template-rows: repeat(3, 1fr);
         grid-gap: 20px;
-        padding: 15px 10px;
+        padding: 20px 10px;
     
     }
     button {
@@ -154,18 +80,16 @@ button:active {
         color: #FCF8E8 ;
         background-color: #ECB390;
         border: none;
-        border-radius: 10%;
+        border-radius: 5%;
         box-shadow: 0 9px #a94a36;
-        -webkit-border-radius: 10%;
-        -moz-border-radius: 10%;
-        -ms-border-radius: 10%;
-        -o-border-radius: 10%;
-}
+        -webkit-border-radius: 5%;
+        -moz-border-radius: 5%;
+        -ms-border-radius: 5%;
+        -o-border-radius: 5%;
+    }
     #eqauls{
         width: 8rem;
     }
-    button:hover {background-color: #a94a36}
-    
     button:active {
         background-color: #DF7861;
         box-shadow: 0 5px #a94a36;
@@ -177,3 +101,100 @@ button:active {
     }
     
     }
+    /* Desktop DESGIN */
+    @media only screen and (min-width: 1000px){
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html{
+          background-color:#FCF8E8;
+        }
+        .Flexbox-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 5%;
+        }
+    
+        .Calculator-body{
+            background-color: #668471;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: auto;
+            width: 20vw;
+            border-radius: 5%;
+            -webkit-border-radius: 5%;
+            -moz-border-radius: 5%;
+            -ms-border-radius: 5%;
+            -o-border-radius: 5%;
+    }
+        .display{
+            display: flex;
+            background-color: #c9c5b6 ;
+            width: 20vw;
+            height: 10vh;
+            font-size: 42px;
+            justify-content: center;
+            align-items: flex-end;
+            color: #a94a36;
+    }
+    #last_display{
+        display: flex;
+        background-color: #c9c5b6 ;
+        width: 20vw;
+        height: 3vh;
+        font-size: 20px;
+        border-top-left-radius: 5%;
+        border-top-right-radius: 5%;
+        padding-top: 5px;
+        justify-content: flex-end;
+        align-items: center;
+        color: #b88362;
+        }
+        .calculator-keys{
+            display: grid;
+            grid-template-rows: repeat(3, 1fr);
+            grid-gap: 20px;
+            padding: 15px 10px;
+        
+        }
+        button {
+            width: 4rem;
+            height: 4rem;
+            font-size: 38px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #FCF8E8 ;
+            background-color: #ECB390;
+            border: none;
+            border-radius: 10%;
+            box-shadow: 0 9px #a94a36;
+            -webkit-border-radius: 10%;
+            -moz-border-radius: 10%;
+            -ms-border-radius: 10%;
+            -o-border-radius: 10%;
+    }
+    #clear{
+        width: 8rem;
+    }
+
+    #eqauls{
+        width: 8rem;
+    }
+        button:hover {background-color: #a94a36}
+        
+        button:active {
+            background-color: #DF7861;
+            box-shadow: 0 5px #a94a36;
+            transform: translateY(4px);
+            -webkit-transform: translateY(4px);
+            -moz-transform: translateY(4px);
+            -ms-transform: translateY(4px);
+            -o-transform: translateY(4px);
+        }
+        
+        }

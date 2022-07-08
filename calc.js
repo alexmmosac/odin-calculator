@@ -1,5 +1,4 @@
-
-function add(){
+export function add(){
 var sum = 0;
 if(arguments !== undefined){
     if(arguments.length >= 2){              // Adds multiply args together.
@@ -36,7 +35,7 @@ else{
 }
 }
 
-function sub(){
+export function sub(){
     var differance;
     if(arguments !== undefined){
         if(arguments.length >= 2){
@@ -75,16 +74,16 @@ function sub(){
         return Error;
     }
 }
-function div(){
+export function div(){
 var quotient;
 if(arguments !== undefined){
     if(arguments.length >= 2){          
-        if(arguments[0] == 0){              //check for divide by zero. 
+        if(arguments[1] == 0){              //check for divide by zero. 
             return Error;
         }
         else{
         var temp = arguments[0];
-        for(x = 1; x < arguments.length; x++){
+        for(var x = 1; x < arguments.length; x++){
             temp /= arguments[x];
         }
         quotient = temp;
@@ -120,7 +119,7 @@ else{
 }
 }
 
-function mul(){
+export function mul(){
     var product = 1;
     if(arguments !== undefined){
         if(arguments.length >= 2){              // Adds multiply args together.
@@ -156,7 +155,7 @@ function mul(){
     }
 }
 
-function convert_to_percent(){
+export function convert_to_percent(){
 var percent = 0.0;
 if(arguments !== undefined){
     if(arguments.length >= 2){              // Adds multiply args together.
@@ -198,12 +197,3 @@ else{
 
 }
 
-
-
-module.exports = {
-    add,
-    sub,
-    div,
-    mul,
-    convert_to_percent
-}
