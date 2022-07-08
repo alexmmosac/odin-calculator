@@ -1,8 +1,11 @@
+//TODO: fix to where you can enter float in both num1, num2
+//TODO: fix to where you can only insert neg in num1, num2.
+
 import {add, sub, div, mul, convert_to_percent}  from './calc.js'
 //create three variables.
 var num1 = 0; //the first number pressed.
 var num2 = 0; //the second number pressed.
-var operation;
+var operation = '';
 var dot = false;
 
 //get elements 
@@ -27,7 +30,7 @@ op_keys_arry.forEach(element => {
 
  clear_key.addEventListener('click', () => ResetAll());
 
-if(screen_display.textContent != " "){
+if(screen_display.textContent != " " ){
     percent_key.addEventListener('click', () => percent());
 }
 equal.addEventListener('click',  maths);
@@ -47,7 +50,6 @@ if(operation == null){         // if the op key has not been pressed yet then it
     }
 }
 else{                   // ELSE the op key has been pressed in which this is the 2nd num. 
-    dot = false;
     if(dot == false && num == "."){
         screen_display.textContent += num;
         dot = true;
@@ -78,8 +80,10 @@ function SetOp(op){                     // Once op key is pressed update num1. s
     screen_display.textContent = `${num1} ${operation}`
 }
 
+//TODO: fix to where you can only percent 1st num.
 function percent(){
-    screen_display.textContent = convert_to_percent(Number(screen_display.textContent));
+screen_display.textContent = convert_to_percent(Number(screen_display.textContent));
+
 }
 
 
