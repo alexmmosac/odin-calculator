@@ -138,10 +138,11 @@ b - Dark
             background-color: #c9c5b6 ;
             width: 20vw;
             height: 10vh;
-            font-size: 42px;
+            font-size: 30px;
             justify-content: center;
             align-items: flex-end;
             color: #a94a36;
+            word-wrap: break-word;
     }
     #last_display{
         display: flex;

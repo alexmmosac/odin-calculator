@@ -1,12 +1,10 @@
-//TODO: fix to where you can enter float in both num1, num2
 //TODO: fix to where you can only insert neg in num1, num2.
 
 import {add, sub, div, mul, convert_to_percent}  from './calc.js'
-//create three variables.
 var num1 = 0; //the first number pressed.
 var num2 = 0; //the second number pressed.
-var operation = '';
-var dot = false;
+var operation = ' '; //The operation being conducted
+var dot = false;    //flag to store if number is a float
 
 //get elements 
 const screen_display = document.getElementById("display");
@@ -49,10 +47,11 @@ if(operation == null){         // if the op key has not been pressed yet then it
         console.log("Can't enter that here");
     }
 }
-else{                   // ELSE the op key has been pressed in which this is the 2nd num. 
+else{
     if(dot == false && num == "."){
         screen_display.textContent += num;
         dot = true;
+        num2 += num;
     }
     else if(num != "."){
         num2 += num;
@@ -67,23 +66,35 @@ else{                   // ELSE the op key has been pressed in which this is the
 
 function ResetAll(){                        // This will reset everythin num1, num2, and the screen
     screen_display.textContent = " ";
-    num1 = 0;
-    num2 = 0;
+    num1 = '';
+    num2 = '';
     operation = ' ';
     dot = false;
     last_operation.textContent = " ";
 }
-function SetOp(op){                     // Once op key is pressed update num1. set the operation and update the screen
+function SetOp(op){
+    if(num1 != '' && num2 != '' && operation != ' ' ){
+        maths();
+        operation = op;
+        num2 = ' ';
+        dot = false;
+        screen_display.textContent = `${num1} ${operation}`;
+    }
+    else{
     num1 = screen_display.textContent;
     operation = op;
     num2 = ' ';
+    dot = false;
     screen_display.textContent = `${num1} ${operation}`
+    }
 }
 
-//TODO: fix to where you can only percent 1st num.
-function percent(){
-screen_display.textContent = convert_to_percent(Number(screen_display.textContent));
 
+function percent(){
+if(operation == ' '){
+dot = true;
+screen_display.textContent = convert_to_percent(Number(screen_display.textContent));
+}
 }
 
 
@@ -94,27 +105,46 @@ function maths(){                   // logic of deciding which operation to use.
     if(operation === '×'){
           screen_display.textContent = ' ';
           num1 = mul(Number(num1), Number(num2));
+          if(num1 == Error){
+            screen_display.textContent = "Error Can't multiply";
+          }
+          else{
           screen_display.textContent = num1;
           num2 = '';
-          
+          }
         }
         else if(operation === '-'){
             screen_display.textContent = ' ';
             num1 = sub(Number(num1), Number(num2));
+           if(num1 == Error){
+            screen_display.textContent = "Error Can't Subtract";
+           }
+           else{
             screen_display.textContent = num1;
             num2 = 0;
+           }
         }
         else if(operation === '+'){
             screen_display.textContent = ' ';
            num1  = add(Number(num1), Number(num2));
+           if(num1 == Error){
+            screen_display.textContent = "Error Can't Add";
+           }
+           else{
            screen_display.textContent = num1; 
            num2 = 0;
+           }
         }
         else if(operation === '÷'){
             screen_display.textContent = ' ';
            num1 = div(Number(num1), Number(num2));
+           if(num1 == Error){
+            screen_display.textContent = "Error Cant Divide";
+           }
+           else{
            screen_display.textContent = num1; 
            num2 = 0;
+           }
         }
         else{
           return null;

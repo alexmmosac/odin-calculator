@@ -77,7 +77,7 @@ export function sub(){
 export function div(){
 var quotient;
 if(arguments !== undefined){
-    if(arguments.length >= 2){          
+    if(arguments.length >= 2){
         if(arguments[1] == 0){              //check for divide by zero. 
             return Error;
         }
@@ -192,8 +192,4 @@ if(arguments !== undefined){
 else{
     return Error;
 }
-
-//TODO: Add Feature, Flip Signs.
-
 }
-
