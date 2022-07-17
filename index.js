@@ -1,5 +1,3 @@
-//TODO: fix to where you can only insert neg in num1, num2.
-
 import {add, sub, div, mul, convert_to_percent}  from './calc.js'
 var num1 = 0; //the first number pressed.
 var num2 = 0; //the second number pressed.
@@ -14,6 +12,7 @@ const equal = document.getElementById("eqauls");
 const last_operation = document.getElementById("last_display");
 
 //set event listerns.
+window.addEventListener('keydown', handleKeyboardInput);        // Keyboard stuff
 const num_keys = document.getElementsByClassName("number_keys");
 var num_keys_arry = Array.prototype.slice.call(num_keys);
 num_keys_arry.forEach(element => {
@@ -32,6 +31,37 @@ if(screen_display.textContent != " " ){
     percent_key.addEventListener('click', () => percent());
 }
 equal.addEventListener('click',  maths);
+
+
+function handleKeyboardInput(e) {
+    if (e.key >= 0 && e.key <= 9 || e.key == '.') {
+        AppendtoScreen(e.key);
+    }
+    if (e.key === '=' || e.key === 'Enter'){
+     maths();
+    }
+    if (e.key === 'Escape') {
+        ResetAll()
+    }
+    if (e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/'){
+      SetOp(convertOperator(e.key));
+    }
+}
+function convertOperator(keyboardOperator) {
+        if (keyboardOperator === '/') {
+            return '÷';
+        }
+        if (keyboardOperator === '*') {
+            return '×';
+        }
+        if (keyboardOperator === '-'){
+            return '−';
+        }
+        if (keyboardOperator === '+'){
+            return '+';
+        }
+      }
+
 
 // If user clicks number  -> that number gets sent to the screen. 
 function AppendtoScreen(num){

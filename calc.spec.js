@@ -1,5 +1,6 @@
-
 import {add, sub, div, mul, convert_to_percent}  from './calc.js'
+
+
 // ADD - Basic Functionality
 describe('Basic Calculator test', () => {
     test('Take in one number and return it.', () => {

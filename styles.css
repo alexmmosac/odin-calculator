@@ -43,24 +43,25 @@ b - Dark
     .display{
         display: flex;
         background-color: #c9c5b6 ;
-        border-bottom: 1px solid #b88362;
         width: 100vw;
-        height: 8vh;
-        font-size: 42px;
+        height: 30vh;
+        font-size: 9vw;
         justify-content: flex-end;
         align-items: center;
         color: #a94a36;
         padding-right: 4px;
+        word-break: break-all;
     }
     #last_display{
     display: flex;
-    background-color: #c9c5b6 ;
+    background-color: #c9c5b6;
     width: 100vw;
     height: 5vh;
-    font-size: 20px;
+    font-size: 7vw;
     justify-content: center;
     align-items: center;
     color: #a94a36;
+    word-break: break-all;
     }
     .calculator-keys{
         display: grid;
@@ -88,10 +89,10 @@ b - Dark
         -o-border-radius: 5%;
     }
     #clear{
-        width: 34vw;
+        width: 36vw;
     }
     #eqauls{
-        width: 34vw;
+        width: 36vw;
     }
     button:active {
         background-color: #DF7861;
@@ -138,11 +139,12 @@ b - Dark
             background-color: #c9c5b6 ;
             width: 20vw;
             height: 10vh;
-            font-size: 30px;
+            font-size: 1.3vw;
             justify-content: center;
             align-items: flex-end;
             color: #a94a36;
-            word-wrap: break-word;
+            word-break: break-all;
+
     }
     #last_display{
         display: flex;
@@ -156,6 +158,7 @@ b - Dark
         justify-content: flex-end;
         align-items: center;
         color: #b88362;
+        word-break: break-all;
         }
         .calculator-keys{
             display: grid;
@@ -183,7 +186,7 @@ b - Dark
             -o-border-radius: 10%;
     }
     #clear{
-        width: 9vw;
+        width: 8rem;
     }
 
     #eqauls{
